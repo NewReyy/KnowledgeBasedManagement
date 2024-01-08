@@ -67,6 +67,7 @@
                 <th class="p-3">Title</th>
                 <th class="p-3">Pilihan Keputusan</th>
                 <th class="p-3">Keterangan</th>
+                <th class="p-3">Action</th>
             </tr>
         </thead>
         <tbody class="border-b">
