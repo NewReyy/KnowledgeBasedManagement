@@ -22,7 +22,7 @@ class Feedback extends BaseController
     protected $contentModel;
     protected $projectModel;
     protected $faqModel;
-    protected $feedModel;
+    protected $feedbackModel;
     protected $db;
 
     public function __construct()
@@ -34,14 +34,13 @@ class Feedback extends BaseController
         $this->contentModel = new contentModel();
         $this->projectModel = new projectModel();
         $this->faqModel = new FaqModel();
-        $this->feedModel = new FeedbackModel();
+        $this->feedbackModel = new FeedbackModel();
         $this->db = db_connect();
     }
 
     public function index()
     {
-        $feed = new FeedbackModel();
-        $feeds = $feed->findAll();
+        $feeds = $this->feedbackModel->findAll();
 
         $content = $this->db->table('content a')
         ->select('a.*, COALESCE(b.name_project, "virtusee") AS id_project, c.name_category AS id_category, d.name_subcategory AS id_sub_category')
@@ -83,40 +82,7 @@ class Feedback extends BaseController
 
     public function deleteFeedback($id = null)
     {
-        $this->feedModel->delete($id);
+        $this->feedbackModel->delete($id);
         return redirect()->to('admin/feedback')->with('success', "Data Feedback berhasil dihapus");
-    }
-    
-
-    public function editFeedback($id)
-    {
-        // Membuat instance dari model Feedback
-        $feedbackModel = new feedback();
-
-        // Mendapatkan data feedback berdasarkan ID
-        $feedbackData = $feedbackModel->find($id);
-
-        if (empty($feedbackData)) {
-            return redirect()->to(previous_url())->with('error', "Data feedback tidak ditemukan");
-        }
-
-        // Menerima data dari form atau sumber lainnya
-        $data = [
-            'kategori' => $this->request->getVar('category'),
-            'sub_kategori' => $this->request->getVar('subcategory'),
-            'title' => $this->request->getVar('title'),
-            'pilihan_kepuasan' => $this->request->getVar('feedback'),
-            'keterangan' => $this->request->getVar('message')
-        ];
-
-        // Memperbarui data ke dalam database berdasarkan ID
-        $updated = $feedbackModel->update($id, $data);
-
-        if ($updated) {
-            // Jika data berhasil diperbarui, redirect ke halaman sukses atau halaman lainnya
-            return redirect()->to(previous_url())->with('success', "Data feedback berhasil diperbarui");
-        } else {
-            return redirect()->to(previous_url())->with('error', "Data feedback gagal diperbarui");
-        }
     }
 }
