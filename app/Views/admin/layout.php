@@ -60,6 +60,18 @@
           </svg>
           <span class="pl-6">Inbox</span>
         </a>
+        <a href="<?php echo base_url(); ?>admin/faq" class="flex items-center py-3 px-5 hover:rounded-md hover:bg-main hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a1 1 0 010 2H3a1 1 0 010-2h18zM21 6a1 1 0 010 2H3a1 1 0 010-2h18zM21 14a1 1 0 010 2H3a1 1 0 010-2h18zM3 18h18"></path>
+          </svg>
+          <span class="pl-6">FAQ</span>
+        </a>
+        <a href="<?php echo base_url(); ?>admin/feedback" class="flex items-center py-3 px-5 hover:rounded-md hover:bg-main hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a1 1 0 010 2H3a1 1 0 010-2h18zM21 6a1 1 0 010 2H3a1 1 0 010-2h18zM21 14a1 1 0 010 2H3a1 1 0 010-2h18zM3 18h18"></path>
+          </svg>
+          <span class="pl-6">Feedback</span>
+        </a>
         <a href="<?php echo base_url() ?>kb/logout" class="flex items-center py-3 px-5 hover:rounded-md hover:bg-main hover:text-white">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />

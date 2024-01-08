@@ -26,6 +26,7 @@
                     <div class="mt-1">
                         <small class=" text-red-600 text-sm"><?= session('errors.name'); ?></small>
                     </div>
+                    
                 <?php endif; ?>
             </div>
             <div class="mb-4">

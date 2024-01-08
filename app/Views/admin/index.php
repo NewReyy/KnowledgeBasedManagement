@@ -12,7 +12,7 @@
 
     <div class="ml-3">
       <div class="font-bold text-xl">User</div>
-      <div class="text-sm">23 Users</div>
+      <div class="text-sm"><?= $userCount ?> Users</div>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
 
     <div class="ml-3">
       <div class="font-bold text-xl">Category</div>
-      <div class="text-sm">23 Categories</div>
+      <div class="text-sm"><?= $categoryCount ?> Categories</div>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
 
     <div class="ml-3">
       <div class="font-bold text-xl">Article</div>
-      <div class="text-sm">23 Articles</div>
+      <div class="text-sm"><?= $articleCount ?> Articles</div>
     </div>
   </div>
 
@@ -51,7 +51,7 @@
 
     <div class="ml-3">
       <div class="font-bold text-xl">Complain</div>
-      <div class="text-sm">23 Complains</div>
+      <div class="text-sm"><?= $complainCount ?> Complains</div>
     </div>
   </div>
 </div>

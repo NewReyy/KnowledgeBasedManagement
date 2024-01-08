@@ -189,9 +189,13 @@
                     <a href="">
                         <p class="mb-3">Login</p>
                     </a>
-                    <a href="">
-                        <p class="mb-3 tracking-wide">FAQ</p>
-                    </a>
+
+                    <a href="<?= base_url('admin/faq') ?>" class="mb-3 tracking-wide">FAQ</a>
+
+
+
+
+
                 </div>
             </div>
             <div class="font-medium pe-2 lg:pe-10 sm:ml-32 lg:ml-0 mt-10 lg:mt-0 w-full sm:w-auto">

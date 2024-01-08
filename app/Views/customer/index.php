@@ -5,6 +5,8 @@
     <div id="faq" class="flex-col justify-center items-center min-h-[40vh] lg:min-h-[80vh] sm:min-h-[70vh] md:min-h-[80vh] 2xl:min-h-[71vh]">
         <img src="<?php echo base_url(); ?>src/images/waves-hero.png" class="w-full h-[38rem] md:h-[49rem] sm:h-[40rem] lg:h-[49rem] 2xl:h-[62rem] object-cover absolute z-[-1] top-0 2xl:-top-20" alt="" data-aos="fade-down" data-aos-duration="500" data-aos-once="true" data-aos-delay="500">
         <div class="mt-12">
+
+        
             <h1 class="flex gap-3 justify-center text-3xl lg:text-5xl sm:text-4xl font-semibold sm:font-bold w-fit mx-auto" data-aos="fade-down" data-aos-duration="500" data-aos-once="true" data-aos-delay="750">
                 <span class="text-white">Help center</span>
                 <div class="flex">

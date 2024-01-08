@@ -31,6 +31,8 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+
 $routes->get('/', 'Home::index');
 $routes->post('/', 'Home::create');
 
@@ -44,6 +46,7 @@ $routes->group('kb', static function ($routes) {
     $routes->post('generalarticle/generalarticledetail/updateReaction', 'Home::updateReaction');
     $routes->get('complain', 'Home::complain');
     $routes->post('complain', 'Home::create');
+    $routes->post('feedback', 'Home::addFeedback');
     $routes->get('history', 'Home::history');
     $routes->get('personalarticle', 'Home::personalarticle');
     $routes->post('personalarticle', 'Home::create');
@@ -52,7 +55,30 @@ $routes->group('kb', static function ($routes) {
     $routes->post('complain/sendReply', 'Home::sendReply');
     $routes->get('allcomplain', 'Home::allcomplain');
     $routes->get('search', 'Home::searchresult');
+    $routes->get('yohan', 'Home::faq');
 });
+
+
+// app/Config/Routes.php
+
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+    $routes->get('faq', 'FaqController::index');
+    $routes->get('faq/create', 'FaqController::create');
+    $routes->post('faq/store', 'FaqController::store');
+    $routes->get('faq/edit/(:num)', 'FaqController::edit/$1');
+    $routes->post('faq/update/(:num)', 'FaqController::update/$1');
+    $routes->get('dashboard', 'Admin::index');
+
+    // Delete related routes
+    $routes->get('faq/delete/(:num)', 'FaqController::delete/$1');
+    $routes->post('faq/perform-delete/(:num)', 'FaqController::performDelete/$1');
+    $routes->post('faq/hapus/(:num)', 'FaqController::hapus/$1');
+
+    $routes->get('feedback', 'Home::feedback');
+    $routes->get('feedback/edit', 'Home::editFeedback');
+    $routes->get('feedback/delete', 'Home::deleteFeedback');
+});
+
 
 // ROUTE ADMIN
 $routes->group('/kb/administrator', ['namespace' => 'App\Controllers\Admin'], static function ($routes) {
