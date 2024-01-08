@@ -81,28 +81,10 @@ class Feedback extends BaseController
       return view('admin/addfeedback', $data);
     }
 
-    public function deleteFeedback($id)
+    public function deleteFeedback($id = null)
     {
-        // Membuat instance dari model Feedback
-        $feedbackModel = new FeedbackModel();
-    
-        // Mencari data feedback berdasarkan ID
-        $feedback = $feedbackModel->find($id);
-    
-        if ($feedback) {
-            // Jika data feedback ditemukan, hapus data dari database
-            $deleted = $feedbackModel->delete($id);
-    
-            if ($deleted) {
-                // Jika data berhasil dihapus, redirect ke halaman sukses atau halaman lainnya
-                return redirect()->to(previous_url())->with('success', "Data feedback berhasil dihapus");
-            } else {
-                return redirect()->to(previous_url())->with('error', "Gagal menghapus data feedback");
-            }
-        } else {
-            // Jika data feedback tidak ditemukan, redirect ke halaman sukses atau halaman lainnya
-            return redirect()->to(previous_url())->with('error', "Data feedback tidak ditemukan");
-        }
+        $this->feedModel->delete($id);
+        return redirect()->to('admin/feedback')->with('success', "Data Feedback berhasil dihapus");
     }
     
 
