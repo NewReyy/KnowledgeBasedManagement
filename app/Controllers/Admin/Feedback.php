@@ -84,7 +84,7 @@ class Feedback extends BaseController
     public function deleteFeedback($id)
     {
         // Membuat instance dari model Feedback
-        $feedbackModel = new feedback();
+        $feedbackModel = new FeedbackModel();
 
         // Menghapus data berdasarkan ID
         $deleted = $feedbackModel->delete($id);
