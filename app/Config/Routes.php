@@ -77,7 +77,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
     $routes->get('feedback', 'Feedback::index');
     // $routes->get('feedback/edit', 'Feedback::editFeedback');
     // $routes->get('feedback/add', 'Feedback::editFeedback');
-    $routes->get('feedback/delete', 'Feedback::deleteFeedback');
+    $routes->get('feedback/delete/(:num)', 'Feedback::deleteFeedback');
 });
 
 
