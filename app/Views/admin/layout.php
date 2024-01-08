@@ -60,12 +60,12 @@
           </svg>
           <span class="pl-6">Inbox</span>
         </a>
-        <a href="<?php echo base_url(); ?>admin/faq" class="flex items-center py-3 px-5 hover:rounded-md hover:bg-main hover:text-white">
+        <!-- <a href="<?php echo base_url(); ?>admin/faq" class="flex items-center py-3 px-5 hover:rounded-md hover:bg-main hover:text-white">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a1 1 0 010 2H3a1 1 0 010-2h18zM21 6a1 1 0 010 2H3a1 1 0 010-2h18zM21 14a1 1 0 010 2H3a1 1 0 010-2h18zM3 18h18"></path>
           </svg>
           <span class="pl-6">FAQ</span>
-        </a>
+        </a> -->
         <a href="<?php echo base_url(); ?>admin/feedback" class="flex items-center py-3 px-5 hover:rounded-md hover:bg-main hover:text-white">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 10a1 1 0 010 2H3a1 1 0 010-2h18zM21 6a1 1 0 010 2H3a1 1 0 010-2h18zM21 14a1 1 0 010 2H3a1 1 0 010-2h18zM3 18h18"></path>

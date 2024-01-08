@@ -43,38 +43,42 @@ class Feedback extends BaseController
         $feed = new FeedbackModel();
         $feeds = $feed->findAll();
 
+        $content = $this->db->table('content a')
+        ->select('a.*, COALESCE(b.name_project, "virtusee") AS id_project, c.name_category AS id_category, d.name_subcategory AS id_sub_category')
+        ->join('article e', 'a.id = e.id_content')
+        ->join('categories c', 'a.id_category = c.id')
+        ->join('sub_category d', 'a.id_sub_category = d.id')
+        ->join('project b', 'e.id_project = b.id', 'left')
+        ->get()
+        ->getResultArray();
+
         $data = [
             'title' => 'Virtusee | Feedback',
             'feeds' => $feeds,
+            'content' => $content,
             'notification' => count($this->complainModel->select("*")->where("is_read", 0)->findAll())
         ];
 
         return view('admin/feedback', $data);
     }
 
-    public function addFeedback()
+    public function new()
     {
-        // Menerima data dari form atau sumber lainnya
+        $categorySelected = $this->request->getVar('category') ?? 0;
+        $category = $this->categoryModel->findAll();
+        $sub_category = $this->subCategoryModel->findAll();
+        $content = $this->contentModel->findAll();
+        
         $data = [
-            'kategori' => $this->request->getVar('category'),
-            'sub_kategori' => $this->request->getVar('subcategory'),
-            'title' => $this->request->getVar('title'),
-            'pilihan_kepuasan' => $this->request->getVar('feedback'),
-            'keterangan' => $this->request->getVar('message')
+            'title' => 'Add Feedback',
+            'category' => $category,
+            'sub_category' => $sub_category,
+            'categorySelected' => $categorySelected,
+            'content' => $content,
+            'notification' => count($this->complainModel->select("*")->where("is_read", 0)->findAll())
         ];
-
-        // Membuat instance dari model Feedback
-        $feedbackModel = new feedback();
-
-        // Memasukkan data ke dalam database
-        $inserted = $feedbackModel->insert($data);
-
-        if ($inserted) {
-            // Jika data berhasil dimasukkan, redirect ke halaman sukses atau halaman lainnya
-            return redirect()->to(previous_url())->with('success', "Data feedback berhasil ditambah");
-        } else {
-            return redirect()->to(previous_url())->with('error', "Data feedback gagal ditambah");
-        }
+  
+      return view('admin/addfeedback', $data);
     }
 
     public function deleteFeedback($id)

@@ -75,7 +75,8 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($rou
     $routes->post('faq/hapus/(:num)', 'FaqController::hapus/$1');
 
     $routes->get('feedback', 'Feedback::index');
-    $routes->get('feedback/edit', 'Feedback::editFeedback');
+    // $routes->get('feedback/edit', 'Feedback::editFeedback');
+    // $routes->get('feedback/add', 'Feedback::editFeedback');
     $routes->get('feedback/delete', 'Feedback::deleteFeedback');
 });
 

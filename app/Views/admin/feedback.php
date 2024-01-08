@@ -21,12 +21,6 @@
                     </svg>
                 </button>
             </div>
-            <a href="<?php echo base_url(); ?>admin/feedback" class="border border-gray-400 px-6 py-2 rounded-2xl hover:border-green-400 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
-                    <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z" />
-                    <path d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5Z" />
-                </svg>
-            </a>
         </div>
     </div>
     <div class="mb-5 flex items-center justify-end text-xs">
@@ -84,14 +78,11 @@
                     </td>
                     <!-- <td class="p-3">1</td> -->
                     <td class="p-3"><?php echo $feed['kategori'] ?></td>
-                    <td class="p-3"><?php echo $feed['pertanyaan'] ?></td>
-                    <td class="p-3"><?php echo $feed['jawaban'] ?></td>
+                    <td class="p-3"><?php echo $feed['sub_kategori'] ?></td>
+                    <td class="p-3"><?php echo $feed['title'] ?></td>
+                    <td class="p-3"><?php echo $feed['pilihan_kepuasan'] ?></td>
+                    <td class="p-3"><?php echo $feed['keterangan'] ?></td>
                     <td class="p-3 text-center">
-                        <a href="<?php echo base_url() ?>admin/feedback/edit/<?= $feed['id_feed']; ?>" class="px-2 inline-block">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-5 h-5 stroke-secondary hover:stroke-yellow-600">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                            </svg>
-                        </a>
                         <a href="<?php echo base_url(); ?>admin/feedback/delete/<?= $feed['id_feed']; ?>"><button>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-5 h-5 stroke-red-500 hover:stroke-red-700">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />

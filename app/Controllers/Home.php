@@ -6,6 +6,7 @@ use App\Controllers\Admin\Complain;
 use App\Models\Admin\ComplainModel;
 use App\Models\Admin\ComplainReplyModel;
 use App\Models\Admin\CategoryModel;
+use App\Models\Admin\FeedbackModel;
 use App\Models\Admin\SubCategoryModel;
 use App\Models\Admin\ContentModel;
 use App\Models\Admin\projectModel;
@@ -232,6 +233,31 @@ class Home extends BaseController
             'complain' => $complains
         ];
         return view('customer/complain', $data);
+    }
+
+    public function addFeedback()
+    {
+        // Menerima data dari form atau sumber lainnya
+        $data = [
+            'kategori' => $this->request->getVar('category'),
+            'sub_kategori' => $this->request->getVar('subcategory'),
+            'title' => $this->request->getVar('title'),
+            'pilihan_kepuasan' => $this->request->getVar('feedback'),
+            'keterangan' => $this->request->getVar('message')
+        ];
+
+        // Membuat instance dari model Feedback
+        $feedbackModel = new FeedbackModel();
+
+        // Memasukkan data ke dalam database
+        $inserted = $feedbackModel->insert($data);
+
+        if ($inserted) {
+            // Jika data berhasil dimasukkan, redirect ke halaman sukses atau halaman lainnya
+            return redirect()->to(previous_url())->with('success', "Data feedback berhasil ditambah");
+        } else {
+            return redirect()->to(previous_url())->with('error', "Data feedback gagal ditambah");
+        }
     }
 
     public function create()
