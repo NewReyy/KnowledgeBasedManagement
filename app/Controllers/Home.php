@@ -6,7 +6,6 @@ use App\Controllers\Admin\Complain;
 use App\Models\Admin\ComplainModel;
 use App\Models\Admin\ComplainReplyModel;
 use App\Models\Admin\CategoryModel;
-use App\Models\Admin\feedback;
 use App\Models\Admin\SubCategoryModel;
 use App\Models\Admin\ContentModel;
 use App\Models\Admin\projectModel;

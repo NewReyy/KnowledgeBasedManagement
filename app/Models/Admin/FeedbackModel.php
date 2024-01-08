@@ -4,7 +4,7 @@ namespace App\Models\Admin;
 
 use CodeIgniter\Model;
 
-class feedback extends Model
+class FeedbackModel extends Model
 {
     protected $table      = 'feed';
     protected $primaryKey = 'id_feed';
