@@ -61,7 +61,7 @@ class Feedback extends BaseController
         return view('admin/feedback', $data);
     }
 
-    public function deleteFeedback($id = null)
+    public function delete($id = null)
     {
         $this->feedbackModel->delete($id);
         return redirect()->to('admin/feedback')->with('success', "Data Feedback berhasil dihapus");
