@@ -61,28 +61,9 @@ class Feedback extends BaseController
         return view('admin/feedback', $data);
     }
 
-    public function new()
+    public function deleteFeedback($id = null)
     {
-        $categorySelected = $this->request->getVar('category') ?? 0;
-        $category = $this->categoryModel->findAll();
-        $sub_category = $this->subCategoryModel->findAll();
-        $content = $this->contentModel->findAll();
-        
-        $data = [
-            'title' => 'Add Feedback',
-            'category' => $category,
-            'sub_category' => $sub_category,
-            'categorySelected' => $categorySelected,
-            'content' => $content,
-            'notification' => count($this->complainModel->select("*")->where("is_read", 0)->findAll())
-        ];
-  
-      return view('admin/addfeedback', $data);
-    }
-
-    public function deleteFeedback($id_feed = null)
-    {
-        $this->feedbackModel->delete($id_feed);
+        $this->feedbackModel->delete($id);
         return redirect()->to('admin/feedback')->with('success', "Data Feedback berhasil dihapus");
     }
 }
