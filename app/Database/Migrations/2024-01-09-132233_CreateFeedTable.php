@@ -9,7 +9,7 @@ class CreateFeedbackTable extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_feed' => [
+            'id' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
@@ -36,7 +36,7 @@ class CreateFeedbackTable extends Migration
             ],
         ]);
 
-        $this->forge->addKey('id_feed', true);
+        $this->forge->addKey('id', true);
         $this->forge->createTable('feed', true);
     }
 
