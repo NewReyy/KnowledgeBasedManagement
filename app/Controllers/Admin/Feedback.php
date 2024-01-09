@@ -80,9 +80,9 @@ class Feedback extends BaseController
       return view('admin/addfeedback', $data);
     }
 
-    public function deleteFeedback($id = null)
+    public function deleteFeedback($id_feed = null)
     {
-        $this->feedbackModel->delete($id);
+        $this->feedbackModel->delete($id_feed);
         return redirect()->to('admin/feedback')->with('success', "Data Feedback berhasil dihapus");
     }
 }
