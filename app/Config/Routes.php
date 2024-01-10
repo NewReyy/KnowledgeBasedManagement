@@ -61,7 +61,7 @@ $routes->group('kb', static function ($routes) {
 
 // app/Config/Routes.php
 
-$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], static function ($routes) {
     $routes->get('faq', 'FaqController::index');
     $routes->get('faq/create', 'FaqController::create');
     $routes->post('faq/store', 'FaqController::store');
