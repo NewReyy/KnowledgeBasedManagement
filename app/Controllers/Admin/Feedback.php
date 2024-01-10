@@ -40,20 +40,44 @@ class Feedback extends BaseController
 
     public function index()
     {
-        $feeds = $this->feedbackModel->findAll();
+        $page = $this->request->getVar('page') ?? 1;
+        $perPage = $this->request->getVar('perPage') ?? 10;
 
-        $data = [
-            'title' => 'Virtusee | Feedback',
-            'feeds' => $feeds,
-            'notification' => count($this->complainModel->select("*")->where("is_read", 0)->findAll())
+        $offset = ($page - 1) * $perPage;
+
+        $dataFeedback = $this->feedbackModel->findAll($perPage, $offset);
+
+        $totalRecords = $this->feedbackModel->countAll();
+
+        $totalPages = ceil($totalRecords / $perPage);
+
+        $pagination = [
+        'page' => $page,
+        'perPage' => $perPage,
+        'totalRecords' => $totalRecords,
+        'totalPages' => $totalPages
         ];
 
-        return view('admin/feedback', $data);
+        return view('admin/feedback', [
+        'title' => 'Virtusee | Feedback',
+        'feeds' => $dataFeedback,
+        'pagination' => $pagination,
+        'notification' => count($this->complainModel->select("*")->where("is_read", 0)->findAll())
+        ]);
+        // $feeds = $this->feedbackModel->findAll();
+
+        // $data = [
+        //     'title' => 'Virtusee | Feedback',
+        //     'feeds' => $feeds,
+        //     'notification' => count($this->complainModel->select("*")->where("is_read", 0)->findAll())
+        // ];
+
+        // return view('admin/feedback', $data);
     }
 
     public function delete($id = null)
     {
-        $this->feedbackModel->delete($id);
+        $this->feedbackModel->where("id", $id)->delete();
         return redirect()->to('admin/feedback')->with('success', "Data Feedback berhasil dihapus");
     }
 }
