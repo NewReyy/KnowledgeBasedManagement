@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <?php
-                    if ($count == 5) {
+                    if ($count == 10) {
                         break;
                     }
                     ?>
