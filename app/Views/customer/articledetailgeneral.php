@@ -179,11 +179,11 @@
                                 <div class="flex gap-2">
                                     <div class="w-full">
                                         <label for="category" class="block mb-2 text-xs font-medium text-form">Category</label>
-                                        <input type="category" name="category" id="category" class=" border text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-500 placeholder-gray-400 text-form outline-main" placeholder="Username" value="<?= $category['name_category']; ?>" required readonly>
+                                        <input type="category" name="category" id="category" class=" border text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-500 placeholder-gray-400 text-form outline-main" placeholder="Username" value="<?= $content->id_category; ?>" required readonly>
                                     </div>
                                     <div class="w-full">
                                         <label for="subcategory" class="block mb-2 text-xs font-medium text-form">Sub Category</label>
-                                        <input type="subcategory" name="subcategory" id="subcategory" class=" border text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-500 placeholder-gray-400 text-form outline-main" value="<?= $subcategory['name_subcategory']; ?>" required readonly>
+                                        <input type="subcategory" name="subcategory" id="subcategory" class=" border text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-500 placeholder-gray-400 text-form outline-main" value="<?= $content->id_sub_category; ?>" required readonly>
                                     </div>
                                 </div>
                                 
