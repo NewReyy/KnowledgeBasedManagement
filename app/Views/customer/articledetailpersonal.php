@@ -33,7 +33,7 @@
                     <?= $content->content; ?>
                 </div>
                 <div class="pb-3 pt-6 text-base font-semibold lg:text-xl">
-                    Apakah artikel ini membantu?
+                    Apakah artikel ini membantu ?
                 </div>
                 <div class="reactions flex gap-9 px-3">
                     <div class="flex cursor-pointer gap-1 items-center" data-id="<?= $content->id; ?>" id="likes" data-type="like">
