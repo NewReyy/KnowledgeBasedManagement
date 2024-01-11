@@ -6,6 +6,13 @@
         <div class="grid my-7 mx-10 lg:mx-32">
 
             <div class="pb-3 flex flex-col">
+                <div class="font-medium px-3 text-sm">
+                    <a href="<?php echo base_url(); ?>kb" class="text-main hover:text-sky-600">Home</a>
+                    <span> / </span>
+                    <a href="<?php echo base_url(); ?>kb/generalarticle?category=<?= $category_title; ?>" class="text-main hover:text-sky-600"><?= $category_title; ?></a>
+                    <span> / </span>
+                    <span><?= $subcategory_title; ?></span>
+                </div>
                 <div class="py-5 font-bold text-3xl"><?= $content->title; ?></div>
                 <div class="flex items-center gap-4 text-sm pe-10 mt-5 mb-4">
                     <span class="uploadTime" datetime="<?= $content->created_at; ?>"><?= $content->created_at; ?></span>
