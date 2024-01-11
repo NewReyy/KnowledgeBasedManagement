@@ -80,7 +80,6 @@ class Home extends BaseController
             ->join('categories b', 'a.id_category = b.id')
             ->join('sub_category c', 'a.id_sub_category = c.id')
             ->orderBy('a.content_views', 'DESC')
-            ->limit(5)
             ->get()
             ->getResultArray();
         if (logged_in()) {
