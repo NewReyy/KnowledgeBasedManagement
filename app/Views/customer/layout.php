@@ -172,7 +172,7 @@
             </div>
             <div class="flex justify-between text-white font-medium gap-20 lg:gap-32 mt-10 lg:mt-0">
                 <div class="flex flex-col gap-3">
-                    <a href="">
+                    <a href="<?php echo base_url() ?>kb/">
                         <p class="mb-3">Home</p>
                     </a>
                     <a href="">
@@ -190,7 +190,7 @@
                         <p class="mb-3">Login</p>
                     </a>
 
-                    <a href="<?= base_url('admin/faq') ?>" class="mb-3 tracking-wide">FAQ</a>
+                    <a href="<?= base_url('kb/generalarticle') ?>" class="mb-3 tracking-wide">FAQ</a>
 
 
 
