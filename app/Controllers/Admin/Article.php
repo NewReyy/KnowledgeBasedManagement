@@ -95,7 +95,7 @@ class Article extends ResourceController
   public function create()
   {
     $rules = [
-      'title'            => 'required|alpha_numeric_space',
+      'title'            => 'required|regex_match[/^[A-Za-z0-9\s.,!?]+$/]',
       'category'         => 'required',
       'subcategory'     => 'required',
       'project'          => 'required',
@@ -183,7 +183,7 @@ class Article extends ResourceController
   public function update($id = null)
   {
     $rules = [
-      'title'            => 'required|alpha_numeric_space',
+      'title'            => 'required|regex_match[/^[A-Za-z0-9\s.,!?]+$/]',
       'category'         => 'required',
       'subcategory'     => 'required',
       'project'          => 'required',
