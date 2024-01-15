@@ -8,6 +8,7 @@ Flow :
 - Solved & not solved utk komplain
 - register, jika cust lama tampil list projek
 - Halaman utk nampilin komplain scr umum
+- Feedback ketika kurang puas dengan artikel
 
 ONSITE
 - Search field
@@ -17,12 +18,14 @@ ONSITE
 
 - subkategori
 - artikel
-- respon artikel (misal: apakah website ini membantu? opsi ya / tidak) 
+- respon artikel (misal: apakah website ini membantu? opsi ya / tidak)
+- Feedback artikel (apabila memililih tidak)
 
 USER
 - Dashboard
 - Artikel
 - Komplain
+- Feedback
 
 ADMIN
 - Halaman Login Ke admin
@@ -121,3 +124,10 @@ DESAIN DB
 	- created_at
 	- updated_at
 
+-> feed
+	- id
+	- kategori
+	- sub_kategori
+	- title
+	- pilihan_keputusan
+	- keterangan
